@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function BookstoreLayout({ children }) {
   return (
-    <div className="flex flex-col md:flex-row">
+    <div className="flex flex-col md:flex-row web  ">
       <Sidebar />
       <div className="flex flex-wrap p-2 justify-center flex-1">{children}</div>
     </div>

@@ -28,6 +28,8 @@ const books = [
     rentPrice: 24,
     sellPrice: 230,
     sold: 12,
+    rating: 4.5,
+    price: 15.99,
     ISBN: "1-86092-049-7",
   },
   {
@@ -44,6 +46,8 @@ const books = [
     rentPrice: 15,
     sellPrice: 120,
     sold: 10,
+    rating: 4.2,
+    price: 12.99,
     ISBN: "1-86092-050-3",
     renterIds: ["d0cdfaa6-beee-4dd9-bfe6-cbcfeceffa"],
   },
@@ -61,6 +65,8 @@ const books = [
     rentPrice: 10,
     sellPrice: 100,
     sold: 15,
+    rating: 4.8,
+    price: 10.99,
     ISBN: "1-86092-051-X",
   },
   {
@@ -77,6 +83,8 @@ const books = [
     rentPrice: 15,
     sellPrice: 120,
     sold: 10,
+    rating: 4.6,
+    price: 14.99,
     ISBN: "1-86092-052-8",
   },
   {
@@ -93,6 +101,8 @@ const books = [
     rentPrice: 20,
     sellPrice: 250,
     sold: 10,
+    rating: 4.9,
+    price: 29.99,
     ISBN: "1-86092-053-6",
   },
   {
@@ -109,6 +119,8 @@ const books = [
     rentPrice: 15,
     sellPrice: 120,
     sold: 10,
+    rating: 4.7,
+    price: 19.99,
     ISBN: "1-86092-054-4",
     renterIds: [
       "d0cdfaa6-beee-4dd9-bfe6-cbcfeceffa",
@@ -129,6 +141,8 @@ const books = [
     rentPrice: 15,
     sellPrice: 120,
     sold: 1,
+    rating: 4.3,
+    price: 12.99,
     ISBN: "1-86092-055-2",
   },
   {
@@ -145,6 +159,8 @@ const books = [
     rentPrice: 15,
     sellPrice: 120,
     sold: 1,
+    rating: 4.5,
+    price: 15.99,
     ISBN: "1-86092-056-0",
   },
 ];
