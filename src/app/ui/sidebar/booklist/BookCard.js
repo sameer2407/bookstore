@@ -1,30 +1,45 @@
-// make a book card component
+"use client";
 import Link from "next/link";
 import Image from "next/image";
-import { GoBook } from "react-icons/go"; //import the book icon
+import AddToCart from "./AddToCart";
 
 const BookCard = ({ book }) => {
   return (
-    <Link
-      href={`/store/${book.id}`} //pass the book id to the book details page
-      className="flex flex-col items-start p-4 text-sm font-medium text-gray-200 md:text-gray-900 hover:bg-gray-100 group md:text-md transition duration-300 ease-in-out hover:shadow-md"
-    >
-      {/* add image  of the books also in the card */}
-      <Image
-        src={book.cover}
-        width={150}
-        height={200}
-        className="rounded-md shadow-md"
-      />
-      <div className="flex flex-col items-start mt-2">
-        <span className="font-bold">{book.title}</span>
-        <span className="text-gray-500 font-italic text-sm">
-          by <span className="text-purple-600">{book.author}</span>
-        </span>
-        <span className="text-gray-900 font-bold">${book.sellPrice}</span>
-        <span className="text-gray-900 font-bold">{book.rating}/5</span>
+    <div className="w-full md:w-48 lg:w-56 p-3 bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
+      <Link
+        href={`/store/${book.id}`}
+        className="flex flex-col items-center md:items-start text-gray-900 group transition duration-300 ease-in-out"
+      >
+        {/* Book Cover Image */}
+        <Image
+          src={book.cover}
+          width={120}
+          height={180}
+          className="rounded-md shadow-md"
+          alt={book.title}
+        />
+
+        {/* Book Information */}
+        <div className="flex flex-col items-center md:items-start mt-3 space-y-1">
+          <span className="text-md font-bold text-gray-900 group-hover:text-purple-600">
+            {book.title}
+          </span>
+          <span className="text-sm text-gray-600 italic">
+            by <span className="text-purple-600">{book.author}</span>
+          </span>
+          <span className="text-sm font-semibold text-gray-800">
+            ${book.sellPrice}
+          </span>
+          <span className="text-yellow-500 font-bold">{book.rating}/5</span>
+        </div>
+      </Link>
+
+      {/* Add to Cart Button */}
+      <div className="mt-3 flex justify-center w-full">
+        <AddToCart book={book} />
       </div>
-    </Link>
+    </div>
   );
 };
+
 export default BookCard;

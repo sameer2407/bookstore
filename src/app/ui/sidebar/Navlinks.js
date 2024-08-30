@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { GoHomeFill } from "react-icons/go";
 import { IoBookSharp } from "react-icons/io5";
@@ -7,6 +9,8 @@ import { TbRouteX2 } from "react-icons/tb";
 import { CgCommunity } from "react-icons/cg";
 import { FcAbout } from "react-icons/fc";
 import { MdAdminPanelSettings } from "react-icons/md";
+import { useContext } from "react";
+import { MyContext } from "../../../contextAPI/MyContext";
 
 const links = [
   { name: "Home", href: "/", icon: <GoHomeFill /> },
@@ -17,9 +21,12 @@ const links = [
   { name: "Settings", href: "/store/settings", icon: <CiSettings /> },
   { name: "About", href: "/store/about", icon: <CgCommunity /> },
   { name: "Admin", href: "/store/admin", icon: <MdAdminPanelSettings /> },
+  { name: "Cart", href: "/store/cart", icon: <IoBookSharp /> },
 ];
 
 export default function Navlinks() {
+  const { myData, setMyData } = useContext(MyContext);
+
   return (
     <div className="flex flex-wrap md:flex-col">
       {links.map((link) => (
