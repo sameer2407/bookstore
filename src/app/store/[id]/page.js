@@ -1,13 +1,22 @@
-"use client";
-import { useSearchParams } from "next/navigation";
 import Bookdetails from "../../ui/sidebar/booklist/Bookdetails";
-export default function BookdetailsPage({ params }) {
+import { getBookById } from "@/app/db/queries";
+export default async function BookdetailsPage({ params }) {
   const id = params.id;
-  console.log("this is the id", id);
+  let book = null;
+
+  try {
+    book = await getBookById(id);
+  } catch (error) {
+    console.error(`Error fetching book with id ${id}:`, error);
+  }
+
+  if (!book) {
+    return <div>Error loading book details. Please try again later.</div>;
+  }
 
   return (
     <div>
-      <Bookdetails id={id} />
+      <Bookdetails book={book} />
     </div>
   );
 }

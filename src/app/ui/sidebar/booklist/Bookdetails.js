@@ -1,13 +1,10 @@
-import { getBookById } from "../../../lib/book_data";
+import { getBookById } from "@/app/db/queries";
 import Image from "next/image";
 
-const Bookdetails = ({ id }) => {
-  console.log(id);
-
-  const book = getBookById(id);
-  console.log(book);
-  if (!book) return null;
-
+const Bookdetails = ({ book }) => {
+  if (!book) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className="md:ml-60 p-6 bg-white rounded-lg shadow-lg h-full overflow-y-auto overflow-x-hidden">
       <div className="flex flex-col md:flex-row items-center md:items-start gap-6">

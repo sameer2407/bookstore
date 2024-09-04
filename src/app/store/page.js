@@ -1,13 +1,11 @@
-import { getAllBooks } from "../lib/book_data";
+import { getAllBooks } from "../db/queries";
 import BookList from "../ui/sidebar/booklist/BookList";
 
-// fetch  all the books from get all books  and pass the book data to another Booklist component
+const BookListPage = async () => {
+  const books = await getAllBooks();
 
-export default function BookListPage() {
-  const books = getAllBooks();
-  return (
-    <>
-      <BookList books={books} />
-    </>
-  );
-}
+  console.log(books);
+  return <BookList books={books} />;
+};
+
+export default BookListPage;
